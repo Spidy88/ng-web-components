@@ -1,0 +1,10 @@
+<section>
+    <div>Count: {{ items.length }}</div>
+    <sf-list items="items" listener="listener" mode="{{mode}}">
+        <ul>
+            <li ng-click="selectItem(item)" ng-repeat="item in items track by item.id" ng-class="{ selected: isSelected(item) }">
+                {{ item.label }}
+            </li>
+        </ul>
+    </sf-list>
+</section>

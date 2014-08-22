@@ -1,0 +1,21 @@
+{
+  "name": "sample-project",
+  "version": "0.0.1",
+  "authors": [
+    "Nick Ferraro <nferraro@salesforce.com>"
+  ],
+  "description": "Sample Project",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-mocks": "~1.2.20",
+    "angular-animate": "~1.2.20",
+    "angular-route": "~1.2.20"
+  }
+}
