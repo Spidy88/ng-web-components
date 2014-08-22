@@ -2,7 +2,7 @@ var browserifyTransforms = ['brfs'];
 
 module.exports = function(grunt) {
 
-	grunt.registerTask( 'default', [ 'clean', 'browserify', 'sass', 'autoprefixer' ] );
+	grunt.registerTask( 'default', [ 'clean', 'browserify', 'sass', 'autoprefixer', 'copy' ] );
 	
 	grunt.initConfig({
         browserify: {
@@ -42,11 +42,23 @@ module.exports = function(grunt) {
             }
         },
 
+        copy: {
+            dist: {
+                files: [{
+                    expand: true,
+                    src: [ './**/*.png' ],
+                    dest: './dist/img',
+                    cwd: './app/assets/'
+                }]
+            }
+        },
+
         clean: ['./dist']
 	});
 
     grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
