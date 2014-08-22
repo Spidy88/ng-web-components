@@ -37,7 +37,7 @@ module.exports = function(grunt) {
 
         watch: {
             dist: {
-                files: [ './app/**/*.js', './app/**/*.scss' ],
+                files: [ './app/**/*.js', './app/**/*.scss', './app/**/*.html' ],
                 tasks: [ 'default' ]
             }
         },
