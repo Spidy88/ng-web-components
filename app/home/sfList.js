@@ -25,8 +25,7 @@ function sfList() {
             listener: '=?',
             mode: '@?'
         },
-        link: sfListLink,
-        template: '<div sf-transpose></div>'
+        link: sfListLink
     };
 
     function sfListLink( scope, element, attrs, controller, transcludeFn ) {
@@ -40,6 +39,10 @@ function sfList() {
         scope.$watchCollection( 'items', updateSelectedItems );
         scope.$watch( 'mode', updateSelectionMode );
         scope.$watch( 'listener', updateListener );
+
+        transcludeFn(scope, function(clone) {
+            element.append(clone);
+        });
 
         function updateSelectedItems( value ) {
             var newSelectedItems = [];
@@ -80,7 +83,7 @@ function sfList() {
             }
 
             // If the directive is going from multi select to single or none select
-            if ( oldMode === MODES.MULTI && newMode !== MODES.MULTI ) {
+            if ( (oldMode === MODES.MULTI && newMode !== MODES.MULTI) || (oldMode === MODES.SINGLE && newMode === MODES.NONE) ) {
                 // Clear selection if none select or single select with more than 1 item currently selected
                 if ( (newMode === MODES.SINGLE && selectedItems.length > 1) || newMode === MODES.NONE ) {
                     clearSelection();
