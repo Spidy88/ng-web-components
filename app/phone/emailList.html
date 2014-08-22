@@ -1,0 +1,7 @@
+<h1>Email List: {{ phone.name }}</h1>
+<sf-list items="phone.emails" listener="phone.adapter">
+    <div class="list-item email" ng-click="selectItem(item)" ng-repeat="item in items track by item.id">
+        <div>From: {{ item.from }}</div>
+        <div>Subject: {{ item.subject }}</div>
+    </div>
+</sf-list>

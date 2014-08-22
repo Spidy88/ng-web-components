@@ -2,9 +2,7 @@
  * Created by nferraro on 8/8/14.
  */
 
-require('./sfTranspose');
-
-angular.module('sample-app.home')
+angular.module('sample-app.common')
     .directive('sfList', sfList);
 
 var MODES = {
