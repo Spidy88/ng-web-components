@@ -1,8 +1,30 @@
+$padding_s: 4px;
+$padding_m: 7px;
+$padding_l: 13px;
+$margin_s: $padding_s;
+$margin_m: $padding_m;
+$margin_l: $padding_l;
+$color_selection: blue;
+$color_separator: gray;
+
+.list {
+  list-style-type: none;
+  -webkit-padding-start: 0px;
+}
+
+.list-item {
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: $padding_m $padding_l;
+  border: 1px solid $color_separator;
+
+  &.ng-click-active {
+    background-color: $color_selection;
+    color: white;
+  }
+}
+
 .selected {
   color: white;
   background-color: black;
-}
-
-li.ng-click-active {
-  background-color: blue;
 }
