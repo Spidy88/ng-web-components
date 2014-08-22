@@ -27,5 +27,8 @@ node_modules
 # Build files
 dist/
 
+# Bower files
+bower_components/
+
 .idea
 .sass-cache
