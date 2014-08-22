@@ -31,6 +31,8 @@ function HomeCtrl() {
         }
     ];
 
+    this.mode = 'multi';
+
     this.selectedJunk = [];
 
     this.updateSelectedJunk = function updateSelectedJunk( items ) {
@@ -70,4 +72,15 @@ function HomeCtrl() {
             }
         ];
     };
+
+    this.changeMode = function changeMode() {
+        console.log("Changing mode");
+        if( this.mode === 'multi' ) {
+            this.mode = 'single';
+        } else if( this.mode === 'single' ) {
+            this.mode = 'none';
+        } else {
+            this.mode = 'multi';
+        }
+    }
 }

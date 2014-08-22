@@ -16,9 +16,11 @@
 <body ng-controller="HomeCtrl as home">
     <section>
         <button ng-click="home.changeItems()">Change Items</button>
+        <button ng-click="home.changeMode()">Change Mode</button>
     </section>
 
-    <sf-simple-list items="home.junk" mode="multi" listener="home.adapter"></sf-simple-list>
+    <h1>Current Mode: {{ home.mode }}</h1>
+    <sf-simple-list items="home.junk" mode="{{home.mode}}" listener="home.adapter"></sf-simple-list>
 
     <h1>Selected Junk</h1>
     <sf-simple-list items="home.selectedJunk"></sf-simple-list>
