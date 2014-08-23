@@ -16,5 +16,12 @@ module.exports = [
         handler: function ( request, reply ) {
             return reply.view('phone');
         }
+    },
+    {
+        method: 'GET',
+        path: '/tablet',
+        handler: function ( request, reply ) {
+            return reply.view('tablet');
+        }
     }
 ];

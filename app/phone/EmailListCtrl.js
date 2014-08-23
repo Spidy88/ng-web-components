@@ -3,10 +3,14 @@
  */
 
 angular.module('sample-app.phone')
-    .controller('EmailCtrl', [ '$route', '$routeParams', '$location', EmailCtrl ] );
+    .controller('EmailListCtrl', [ '$route', '$routeParams', '$location', EmailListCtrl ] );
 
-function EmailCtrl( $route, $routeParams, $location ) {
+function EmailListCtrl( $route, $routeParams, $location ) {
     var that = this;
+
+    this.owner = {
+        name: "Nick"
+    };
 
     this.emails = [
         {
@@ -28,5 +32,14 @@ function EmailCtrl( $route, $routeParams, $location ) {
             body: 'I dare you for a full year to put sand down Sandy Shorts briches every time you see her. I\'ll give you my XBOX if you do!'
         }
     ];
+
+    this.selectEmail = function selectEmail( email ) {
+        console.log("Email selected: ", email);
+        $location.path( $location.path() + '/' + email[0].id );
+    }
+
+    this.adapter = {
+        onSelectionChanged: this.selectEmail
+    };
 }
 
