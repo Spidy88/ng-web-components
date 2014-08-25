@@ -19,5 +19,14 @@ module.exports = [
                 path: './dist/css'
             }
         }
+    },
+    {
+        method: 'GET',
+        path: '/img/{p*}',
+        handler: {
+            directory: {
+                path: './dist/img'
+            }
+        }
     }
 ];

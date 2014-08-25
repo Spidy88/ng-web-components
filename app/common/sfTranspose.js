@@ -2,7 +2,7 @@
  * Created by nferraro on 8/14/14.
  */
 
-angular.module('sample-app.home')
+angular.module('sample-app.common')
     .directive('sfTranspose', sfTranspose);
 
 function sfTranspose() {

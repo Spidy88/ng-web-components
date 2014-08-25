@@ -30,5 +30,8 @@ dist/
 # Bower files
 bower_components/
 
+# Those god forsaken DS_Stores!
+.DS_Store
+
 .idea
 .sass-cache
