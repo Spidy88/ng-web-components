@@ -12,14 +12,14 @@ module.exports = [
     },
     {
         method: 'GET',
-        path: '/phone',
+        path: '/phone/{id?}',
         handler: function ( request, reply ) {
             return reply.view('phone');
         }
     },
     {
         method: 'GET',
-        path: '/tablet',
+        path: '/tablet/{id?}',
         handler: function ( request, reply ) {
             return reply.view('tablet');
         }

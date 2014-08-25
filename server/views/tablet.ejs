@@ -17,7 +17,24 @@
 
 <div class="tablet-container">
     <sf-loading></sf-loading>
-    <div class="tablet-screen" ng-view></div>
+    <div class="tablet-screen">
+        <header>
+            <img class="fl avatar" src="/img/avatar1.png" />
+            <span class="owner">{{ tablet.owner.name }}'s Email</span>
+            <div class="cb" />
+        </header>
+
+        <aside class="sidebar">
+            <sf-list items="tablet.emails" listener="tablet.adapter" mode="single">
+                <div class="list-item email" ng-click="selectItem(item)" ng-repeat="item in items track by item.id" ng-class="{ selected: isSelected(item) }">
+                    <div class="from">{{ item.from }}:</div>
+                    <div class="subject">{{ item.subject }}</div>
+                </div>
+            </sf-list>
+        </aside>
+
+        <section class="content" ng-view></section>
+    </div>
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>

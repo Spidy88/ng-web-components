@@ -3,16 +3,12 @@
  */
 
 angular.module('sample-app.tablet')
-    .controller('EmailListCtrl', [ '$route', '$routeParams', '$location', EmailListCtrl ] );
+    .controller('EmailCtrl', [ '$route', '$routeParams', '$location', EmailCtrl ] );
 
-function EmailListCtrl( $route, $routeParams, $location ) {
+function EmailCtrl( $route, $routeParams, $location ) {
     var that = this;
 
-    this.owner = {
-        name: "Nick"
-    };
-
-    this.emails = [
+    var emails = [
         {
             id: 3,
             from: 'Santa',
@@ -33,13 +29,12 @@ function EmailListCtrl( $route, $routeParams, $location ) {
         }
     ];
 
-    this.selectEmail = function selectEmail( email ) {
-        console.log("Email selected: ", email);
-        $location.path( $location.path() + '/' + email[0].id );
+    this.email = {};
+    for ( var i = 0; i < emails.length; i++ ) {
+        if ( emails[i].id == $routeParams.id ) {
+            this.email = emails[i];
+            break;
+        }
     }
-
-    this.adapter = {
-        onSelectionChanged: this.selectEmail
-    };
 }
 
